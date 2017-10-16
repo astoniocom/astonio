@@ -1,0 +1,6 @@
+@mixin ast-number-range-input-widget-theme($theme) { 
+  .ast-number-range-input-widget {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+}

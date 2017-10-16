@@ -1,0 +1,17 @@
+<div class="ast-input-frame" [ngClass]="{'ast-input-frame-error': errors.length, 'ast-input-frame-disabled': disabled, 'ast-input-frame-no-border': noBorder}">
+  <ng-content select=".ast-input-frame-content"></ng-content>
+  <div class="ast-input-frame-markers">
+    <div class="ast-input-frame-marker" [style.display]="errors.length ? undefined : 'none'" cdk-overlay-origin #origin="cdkOverlayOrigin" (mouseenter)="showErrors(true)"  (mouseleave)="showErrors(false)">
+      <div class="ast-input-frame-button-ico ast-ui-info-ico"></div>
+    </div>
+  </div>
+  <ng-content select=".ast-input-frame-buttons"></ng-content>
+</div>
+
+<ng-template cdk-connected-overlay [origin]="origin" [open]="errors.length && errorsShown" [positions]="_positions">
+  <div class="ast-popup">
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+</ng-template>

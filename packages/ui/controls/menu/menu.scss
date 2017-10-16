@@ -1,0 +1,15 @@
+@mixin ast-menu-theme($theme) { 
+  .ast-menu {
+    border: none;
+    overflow: hidden;
+    background-color: map-get($theme, c2);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+}

@@ -1,0 +1,16 @@
+@mixin ast-items-list-theme($theme) { 
+  .items-list-caption {
+    cursor: default;
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+  .items-list .selected {
+    background: map-get($theme, c3);
+  }
+
+  .items-list .highlighted {
+    -webkit-box-shadow: inset 0px 0px 1px 1px map-get($theme, b2);
+    -moz-box-shadow: inset 0px 0px 1px 1px map-get($theme, b2);
+    box-shadow: inset 0px 0px 1px 1px map-get($theme, b2);
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "author": {
+    "name": "Viktar Katlianik <info@astonio.com>"
+  },
+  "keywords": [
+    "mysql", "orm", "object relational mapper", "dbms"
+  ],
+  "license": "MIT",
+  "name": "astonio",
+  "optionalDependencies": {},
+  "readme": "README.md",
+  "version": "1.0.0"
+}

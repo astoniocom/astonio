@@ -1,0 +1,10 @@
+@mixin ast-grid-theme($theme) {
+  .ast-grid-error-row {
+    background-color: map-get($theme, ac1) !important; 
+  }
+  
+  .ast-grid-error-cell {
+    background-color: map-get($theme, ac2);
+  }
+
+} 

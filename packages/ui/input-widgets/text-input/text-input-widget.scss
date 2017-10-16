@@ -1,0 +1,11 @@
+@mixin ast-text-input-widget-theme($theme) { 
+  .ast-text-input-widget {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+  
+  .ast-text-input-widget-popup > textarea {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+}

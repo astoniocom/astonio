@@ -1,0 +1,30 @@
+<div [attr.class]="'ast-related-records-widget '+class">
+  <ast-input-frame *ngIf="disabled" [errors]="errors" [disabled]="disabled">
+    <div class="ast-input-frame-content">
+      <div *ngIf="isValueSet()">{{ getRepr() }}&nbsp;</div>
+    </div>
+    <div class="ast-input-frame-buttons">
+    </div>
+  </ast-input-frame>
+
+  <ast-input-frame  *ngIf="!disabled" [errors]="errors">
+    <div class="ast-input-frame-content"  (dblclick)="showOptions(!popupDispatcher.opened)">
+      <div *ngIf="isValueSet()" class="ast-related-records-representation">{{ getRepr() }}&nbsp;</div>
+    </div>
+    <div class="ast-input-frame-buttons">
+      <ast-input-frame-button (mousedown)="popupDispatcher.clickedInside()" (click)="expandRecords(!popupDispatcher.opened)"><div class="ast-input-frame-button-ico ast-ui-expand-ico"></div></ast-input-frame-button>
+      <ast-input-frame-button (click)="openRelatedRecordsWindow()"><div class="ast-input-frame-button-ico ast-model-ui-dots-ico"></div></ast-input-frame-button>
+    </div>
+  </ast-input-frame>
+</div>
+
+<ng-template #dropdownTemplate>
+  <div class="ast-dropdown ast-related-records-wiget-dropdown" (mousedown)="popupDispatcher.clickedInside()" #panel>
+    <div *ngIf="isLoading">Loading...</div>
+    <ast-items-list [items]="choices" [ifProcessKeys]="popupDispatcher.opened" (focusChanged)="onFocusChanged($event)" #itemsList>
+      <ng-template let-item="item">
+        <div [innerHTML]="item[1]"></div>
+      </ng-template>
+    </ast-items-list>
+  </div>
+</ng-template>

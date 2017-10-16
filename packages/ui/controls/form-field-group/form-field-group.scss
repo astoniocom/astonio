@@ -1,0 +1,11 @@
+@mixin ast-from-field-group-theme($theme) { 
+  .form-field-group {
+    margin: 5px 5px 5px 5px;
+
+  }
+  
+  .form-field-group:hover {
+    background-color: map-get($theme, c1);
+  }
+
+}

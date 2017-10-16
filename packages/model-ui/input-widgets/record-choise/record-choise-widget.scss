@@ -1,0 +1,24 @@
+@mixin ast-record-choise-widget-theme($theme) { 
+  .ast-record-choise-widget {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+  
+  .ast-record-choise-wiget-choise {
+    background: map-get($theme, c2);
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  .ast-record-choise-wiget-dropdown {
+    max-height:250px;
+    overflow: auto;
+  }
+
+  .ast-input-frame.ast-input-frame-error .ast-record-choise-wiget-choise {
+    background: map-get($theme, ac2);
+  }
+}

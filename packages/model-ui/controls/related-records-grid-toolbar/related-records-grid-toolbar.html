@@ -1,0 +1,19 @@
+<ast-toolbar>
+  <ast-button text="Add" (click)="actions.newRecord()">
+    <div class="ast-button-image ast-model-ui-plus-ico"></div>
+  </ast-button>
+  <ast-button text="Copy" (click)="actions.copyRecord()" [disabled]="!actions?.copyRecordAvailable()">
+    <div class="ast-button-image ast-model-ui-copy-ico"></div>
+  </ast-button>
+  <ast-button text="Remove" (click)="actions.deleteRecord()" [disabled]="!actions?.deleteRecordAvailable()">
+    <div class="ast-button-image ast-model-ui-delete-ico"></div>
+  </ast-button>
+  <ast-button-group>
+    <ast-button (click)="moveDown()" [disabled]="!actions?.moveDownAvailable()">
+      <div class="ast-button-image ast-model-ui-arrow-down-ico"></div>
+    </ast-button>
+    <ast-button (click)="moveUp()" [disabled]="!actions?.moveUpAvailable()">
+      <div class="ast-button-image ast-model-ui-arrow-up-ico"></div>
+    </ast-button>
+  </ast-button-group>
+</ast-toolbar>

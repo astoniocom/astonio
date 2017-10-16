@@ -1,0 +1,70 @@
+@mixin ast-input-frame-theme($theme) { 
+  .ast-input-frame {
+    border: 1px solid map-get($theme, b2);
+    display: flex;
+    white-space: nowrap;
+    height: 1.2em;
+  }
+
+  .ast-input-frame-no-border {
+    border: none;
+    height: calc(1.2em + 2px);
+  }
+
+  .ast-input-frame.ast-input-frame-error {
+    background: map-get($theme, ac2);
+  }
+
+  .ast-input-frame-disabled, .ast-input-frame-disabled.ast-input-frame-error {
+    border: none;
+    background: none;
+  }
+
+  .ast-input-frame:focus {
+    outline: -webkit-focus-ring-color auto 1px;
+  }
+
+  .ast-input-frame-content {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ast-input-frame-buttons {
+    overflow:hidden;
+    display: flex; /* Чтобы кнопки растягивались по высоте*/
+    flex: 0 0 auto;
+  }
+
+  .ast-input-frame-markers {
+    overflow:hidden;
+    display: flex; /* Чтобы кнопки растягивались по высоте*/
+    flex: 0 0 auto;
+  }
+
+  .ast-input-frame-marker {
+    display: flex;
+    text-align: center;
+    min-width: 19px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ast-input-frame-input {
+    border: none;
+    background: map-get($theme, c0);
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0;
+    font-family: map-get($theme, font-family);
+    font-size: map-get($theme, font-size);
+  }
+
+  .ast-input-frame.ast-input-frame-error .ast-input-frame-input {
+    background: map-get($theme, ac2);
+  }
+
+
+  
+}

@@ -1,0 +1,17 @@
+<div [attr.class]="'ast-checkbox-widget ' + class">
+  <ast-input-frame *ngIf="disabled" [errors]="errors" [disabled]="disabled"  [noBorder]="true" >
+    <div class="ast-input-frame-content">
+      <div><input type="checkbox"  [(ngModel)]="value" disabled>&nbsp;<span *ngIf="value===null">null</span></div>
+    </div>
+  </ast-input-frame>
+
+  <div *ngIf="!disabled">
+    <ast-input-frame [errors]="errors" [noBorder]="true">
+      <div class="ast-input-frame-content">
+        <input #inputElement type="checkbox" [(ngModel)]="value"  (keydown)="onKeyDown($event)" [attr.id]="input_id" />&nbsp;<span *ngIf="value===null">null</span>
+      </div>
+      <div class="ast-input-frame-buttons">
+      </div>
+    </ast-input-frame>
+  </div>
+</div>

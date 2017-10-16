@@ -1,0 +1,18 @@
+<div fxLayout="column" class="ast-window-content">
+  <div  fxFlex="grow"  fxLayout="column">
+    <ast-related-records-grid-toolbar [grid]="grid" fxFlex="none" *ngIf="edit"></ast-related-records-grid-toolbar>
+    <ast-related-records-grid [relatedRecords]="relatedRecords" #grid fxFlex="grow" [edit]="edit"></ast-related-records-grid>
+  </div>
+  <!-- {{record.extractStateData()|json}} -->
+  <div fxFlex="none">
+    <ast-toolbar>
+      <div fxLayout="row">
+        <div fxFlex="auto">
+        </div>
+        <div fxFlex="nogrow">
+          <ast-button text="Close" (click)="closeWindow()" [default]="true"></ast-button>
+        </div>
+      </div>
+    </ast-toolbar>
+  </div>
+</div>

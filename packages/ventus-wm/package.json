@@ -1,0 +1,15 @@
+{
+  "name": "@astonio/ventus-wm",
+  "version": "1.0.0-alpha.1",
+  "description": "Manages containers for displaying user interfaces. Utilises Ventus Windows Manager.",
+  "author": "Victar Katlianik <info@astonio.com>",
+  "readme": "README.md",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "peerDependencies": {
+  },
+  "devDependencies": {
+    
+  }
+}

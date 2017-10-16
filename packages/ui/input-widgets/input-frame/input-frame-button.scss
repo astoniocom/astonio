@@ -1,0 +1,31 @@
+@mixin ast-input-frame-button-theme($theme) { 
+  .ast-input-frame-button {
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    background-color: map-get($theme, c2);
+    border-left: map-get($theme, b2) 1px solid;
+    min-width: 16px;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .ast-input-frame-button:hover, .ast-input-frame-button-active:hover {
+    background-color: map-get($theme, c1)
+  }
+
+  .ast-input-frame-button img, .ast-input-frame-button-ico  {
+    opacity: 0.8;
+  }
+
+  div.ast-input-frame-button-ico {
+    background-size: 1em;
+    width: 1em;
+    height: 1em;
+  }
+}

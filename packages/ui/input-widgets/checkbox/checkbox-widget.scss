@@ -1,0 +1,7 @@
+@mixin ast-checkbox-widget-theme($theme) { 
+  .ast-checkbox-widget {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+
+}

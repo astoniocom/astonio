@@ -1,0 +1,11 @@
+<div class="ast-menu-item" (mouseenter)="itemEnter()" (mouseleave)="itemLeaved()" (mousedown)="itemClicked()" cdk-overlay-origin #origin="cdkOverlayOrigin" [ngClass]="{'ast-menu-item-active': active}">
+  <div class="ast-menu-item-text">
+    {{ text }}
+  </div>
+</div>
+
+<ng-template cdk-connected-overlay [origin]="origin" [open]="active && popupMenu" [positions]="_positions" [height]="'80%'">
+  <div (mouseenter)="popupEnter()" style="height:100%">
+    <ng-content></ng-content>
+  </div>
+</ng-template>

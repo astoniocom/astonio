@@ -1,0 +1,27 @@
+{
+  "name": "@astonio/ui",
+  "version": "1.0.0-alpha.1",
+  "description": "Contains basic control elements used by module @astonio/model-ui for generating interfaces. These elements can be used beyond the Astonio framework in external applications.",
+  "author": "Viktar Katlianik <info@astonio.com>",
+  "license": "ISC",
+  "readme": "README.md",
+  "dependencies": {
+    "moment": "^2.18.1",
+    "inputmask": "^3.3.7",
+    "mathjs": "^3.16.1"
+  },
+  "peerDependencies": {
+    "@angular/common": "^4.3.6",
+    "@angular/core": "^4.3.6",
+    "@angular/forms": "^4.3.6",
+    "rxjs": "^5.4.2",
+    "ag-grid": "^9.1.0",
+    "ag-grid-angular": "^9.1.0",
+    "@angular/cdk": "^2.0.0-beta.10",
+    "@angular/flex-layout": "^2.0.0-beta.9",
+    "@angular/platform-browser": "^4.3.6"
+  },
+  "devDependencies": {
+    
+  }
+}

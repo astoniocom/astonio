@@ -1,0 +1,11 @@
+@mixin ast-choise-dialog-theme($theme) { 
+  .ast-choise-dialog-text {
+    margin: 10px;
+  }
+  
+  .ast-choise-dialog-items-list {
+    background: map-get($theme, c0);
+    border: 1px solid map-get($theme, b2);
+    border-bottom: none;
+  }
+}

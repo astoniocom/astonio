@@ -1,0 +1,10 @@
+<div class="ast-popup-menu-item" fxLayoutWrap="row" cdk-overlay-origin #origin="cdkOverlayOrigin" (click)="itemClicked()" (mouseenter)="itemEnter()" (mouseleave)="itemLeaved()" [ngClass]="{'ast-popup-menu-item-active': active, 'ast-popup-menu-item-disabled': disabled}">
+  <div class="ast-popup-menu-item-text" fxFlex="auto" fxLayout="column" fxLayoutAlign="center left">{{ text }}</div>
+  <div class="ast-popup-menu-item-arrow" *ngIf="hasPopup" fxFlex="nogrow" fxLayout="column" fxLayoutAlign="center right">&#9656;</div>
+</div>
+
+<ng-template cdk-connected-overlay [origin]="origin" [open]="active && hasPopup" [positions]="_positions">
+  <div (mouseenter)="popupEntered()">
+    <ng-content></ng-content>
+  </div>
+</ng-template>

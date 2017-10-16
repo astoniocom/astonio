@@ -1,0 +1,171 @@
+@import './controls/button/button.scss';
+@import './controls/button-group/button-group.scss';
+@import './controls/dropdown-button/dropdown-button.scss';
+@import './controls/form-field-group/form-field-group.scss';
+@import './controls/grid/grid.scss';
+@import './controls/items-group/items-group.scss';
+@import './controls/items-list/items-list.scss';
+@import './controls/label/label.scss';
+@import './controls/menu/menu.scss';
+@import './controls/menu-item/menu-item.scss';
+@import './controls/popup-menu/popup-menu.scss';
+@import './controls/grid/grid.scss';
+@import './controls/popup-menu-item/popup-menu-item.scss';
+@import './controls/tab/tab.scss';
+@import './controls/tabs/tabs.scss';
+@import './controls/toolbar/toolbar.scss';
+@import './dialogs/question-dialog.scss';
+@import './dialogs/choise-dialog.scss';
+@import './input-widgets/checkbox/checkbox-widget.scss';
+@import './input-widgets/choise/choise-widget.scss';
+@import './input-widgets/date-input/date-input-widget.scss';
+@import './input-widgets/date-range-input/date-range-input-widget.scss';
+@import './input-widgets/number-input/number-input-widget.scss';
+@import './input-widgets/number-range-input/number-range-input-widget.scss';
+@import './input-widgets/text-input/text-input-widget.scss';
+@import './input-widgets/input-frame/input-frame.scss'; 
+@import './input-widgets/input-frame/input-frame-button.scss'; 
+
+div.ast-ui-cross-ico {
+  background-image:url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4	L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1	c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1	c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>');
+}
+
+div.ast-ui-expand-ico {
+  background-image:url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g>	<polygon points="128,192 256,320 384,192 	"/></g></svg>');
+}
+
+div.ast-ui-maximize-ico {
+  background-image:url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><polygon points="288,96 337.9,145.9 274,209.7 274,209.7 145.9,337.9 96,288 96,416 224,416 174.1,366.1 357.4,182.9 366.1,174.1 	416,224 416,96 "/></svg>');
+}
+
+div.ast-ui-info-ico {
+  background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozYjVjNWE1Mi0xNWExLTM0NDMtYTgwOS1hMWY0MWI5ODIyYTkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUNDQkZEM0Y5OUVGMTFFN0FGMDRDNENFNzFFNzNENjQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RUNDQkZEM0U5OUVGMTFFN0FGMDRDNENFNzFFNzNENjQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI4YjM0ZjZiLWM0MDAtNzU0Yy05ZGM3LWVhMjgzZWM5ZTAwMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozYjVjNWE1Mi0xNWExLTM0NDMtYTgwOS1hMWY0MWI5ODIyYTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5UoOTFAAAAMFBMVEX9DAz9GBjMjIz93d3JdHT+i4voLy/IpKTPurr08/Po4uLrGxvdQ0P/////AAD///9GGHn2AAAAEHRSTlP///////////////////8A4CNdGQAAAGNJREFUeNpcjtsWQCEERKdS0c3//+2hXqzjgdnMAlRV8kpYWUxClee5MdmRXdYKy6wQr9g7eVeQT0BCi9iAiPjjM7/NZqZ7E3doqySaB7Q7luLY/cmO96SRow6ye42GyU+AAQBZZwgVqzLPCwAAAABJRU5ErkJggg==');
+}
+
+div.ast-ui-calculator-ico {
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" style=""><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" class="" style=""/><g class="currentLayer" style=""><title>Layer 1</title><path d="M1.9675510787963868,1.4693877696990967 c-0.06000000000000001,0 -0.09000000000000002,0.04000000000000001 -0.09000000000000002,0.09000000000000002 v7.8100000000000005 c0,0.05000000000000001 0.04000000000000001,0.09000000000000002 0.09000000000000002,0.09000000000000002 h6.8100000000000005 c0.05000000000000001,0 0.09000000000000002,-0.04000000000000001 0.09000000000000002,-0.09000000000000002 v-7.8100000000000005 c0,-0.06000000000000001 -0.04000000000000001,-0.09000000000000002 -0.09000000000000002,-0.09000000000000002 h-6.8100000000000005 zm0.91,1 h5 v2 h-5 v-2 zm0,3 h1 v1 h-1 v-1 zm2,0 h1 v1 h-1 v-1 zm2,0 h1 v3 h-1 v-3 zm-4,2 h1 v1 h-1 v-1 zm2,0 h1 v1 h-1 v-1 z" id="svg_1" class=""/></g></svg>');
+}
+
+
+div.ast-ui-dropdown-ico {
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path d="M0 0l4 4 4-4h-8z" transform="translate(0 2)" /></svg>');
+}
+
+div.ast-logo {
+    background-image:url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="801px" height="206px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 783 201" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs>  <style type="text/css">   <![CDATA[    .fil1 {fill:#FF0040}    .fil0 {fill:#FF0040;fill-rule:nonzero}   ]]>  </style> </defs> <g id="Layer_x0020_1">  <path class="fil0" d="M649 20c0,6 -2,11 -6,15 -4,3 -9,5 -14,5 -6,0 -11,-2 -14,-5 -4,-4 -6,-9 -6,-15 0,-6 2,-11 6,-15 4,-3 8,-5 14,-5 5,0 10,2 14,5 4,4 6,9 6,15z"/>  <polygon class="fil0" points="644,197 613,197 613,57 644,57 "/>  <path class="fil0" d="M476 62c6,-2 14,-4 24,-5 9,-2 20,-3 32,-3 11,0 20,2 27,5 8,3 13,7 18,13 4,6 7,12 9,20 2,8 3,17 3,27l0 78 -31 0 0 -73c0,-8 -1,-14 -2,-20 -1,-5 -2,-9 -4,-12 -3,-4 -5,-6 -9,-8 -4,-1 -8,-2 -14,-2 -4,0 -8,0 -12,1 -4,0 -8,1 -10,1l0 113 -31 0 0 -135z"/>  <path class="fil0" d="M243 20l31 -5 0 42 48 0 0 27 -48 0 0 57c0,12 2,20 5,24 4,5 9,7 17,7 6,0 12,-1 16,-2 5,-2 7,-3 10,-4l6 27c-4,2 -9,3 -15,5 -5,2 -12,3 -20,3 -10,0 -18,-2 -24,-4 -7,-3 -12,-7 -16,-12 -3,-5 -6,-11 -8,-19 -1,-7 -2,-15 -2,-24l0 -122z"/>  <path class="fil0" d="M171 174c9,0 15,-1 18,-3 4,-2 6,-6 6,-11 0,-4 -2,-8 -6,-11 -4,-3 -11,-7 -20,-10 -6,-2 -11,-4 -15,-7 -5,-2 -9,-5 -13,-8 -3,-4 -6,-7 -8,-12 -2,-5 -3,-10 -3,-17 0,-13 5,-23 14,-30 9,-8 21,-11 37,-11 8,0 15,0 23,2 7,1 12,3 16,4l-6 27c-3,-2 -8,-3 -13,-5 -5,-1 -11,-2 -18,-2 -7,0 -12,1 -16,4 -4,2 -6,5 -6,10 0,5 2,8 5,11 2,2 5,3 8,5 3,1 7,3 11,4 7,3 14,6 19,9 5,2 9,6 13,9 3,4 5,8 7,12 2,4 2,10 2,16 0,14 -4,24 -14,31 -10,6 -23,10 -41,10 -12,0 -21,-1 -28,-3 -8,-2 -13,-4 -16,-5l6 -27c4,2 10,4 16,5 7,2 14,3 22,3z"/>  <path class="fil0" d="M57 175c10,0 17,-1 22,-2l0 -36c-2,0 -4,-1 -8,-2 -3,0 -7,0 -10,0 -4,0 -7,0 -11,0 -3,1 -7,2 -9,3 -3,2 -6,4 -7,6 -2,3 -3,6 -3,10 0,8 2,13 7,16 5,3 11,5 19,5zm-3 -121c11,0 19,1 26,4 7,2 13,6 17,11 4,5 7,11 9,17 2,7 3,15 3,23l0 85c-5,1 -12,3 -22,4 -10,2 -20,2 -33,2 -8,0 -15,0 -22,-2 -7,-2 -12,-4 -17,-8 -5,-3 -8,-8 -11,-14 -3,-5 -4,-13 -4,-21 0,-8 2,-15 5,-20 3,-6 7,-10 12,-14 5,-3 11,-6 18,-7 6,-2 13,-3 21,-3 3,0 7,1 11,1 3,0 8,1 12,2l0 -5c0,-4 -1,-7 -1,-11 -1,-3 -3,-6 -5,-9 -2,-2 -5,-4 -8,-6 -4,-1 -8,-2 -14,-2 -7,0 -14,1 -20,2 -6,1 -10,2 -14,3l-4 -26c4,-1 10,-3 17,-4 8,-2 16,-2 24,-2z"/>  <path class="fil0" d="M418 128c0,6 -2,10 -6,14 -4,4 -9,5 -14,5 -6,0 -10,-1 -14,-5 -4,-4 -6,-8 -6,-14 0,-7 2,-12 6,-15 4,-4 8,-6 14,-6 5,0 10,2 14,6 4,3 6,8 6,15z"/>  <path class="fil1" d="M457 159c-3,9 -7,16 -12,22 -6,6 -13,11 -21,15 -8,3 -17,5 -26,5 -10,0 -19,-2 -26,-5 -8,-4 -15,-9 -21,-15 -5,-6 -9,-13 -12,-22l29 -11c1,5 3,9 6,13 6,8 14,12 24,12 10,0 18,-4 24,-12 2,-4 4,-8 6,-13l29 11zm-118 -64c3,-8 7,-15 12,-21 6,-7 13,-12 21,-15 8,-4 16,-5 26,-5 9,0 18,1 26,5 8,3 15,8 20,15 6,6 10,13 13,21l-29 12c-2,-5 -4,-9 -6,-13 -6,-8 -14,-12 -24,-12 -10,0 -18,4 -24,12 -3,4 -5,8 -6,13l-29 -12z"/>  <path class="fil0" d="M744 128c0,6 -2,10 -6,14 -3,4 -8,5 -13,5 -6,0 -11,-1 -15,-5 -4,-4 -6,-8 -6,-14 0,-7 2,-12 6,-15 4,-4 9,-6 15,-6 5,0 10,2 13,6 4,3 6,8 6,15z"/>  <path class="fil1" d="M783 159c-3,9 -7,16 -13,22 -5,6 -12,11 -20,15 -8,3 -17,5 -26,5 -10,0 -19,-2 -27,-5 -8,-4 -14,-9 -20,-15 -5,-6 -9,-13 -13,-22l30 -11c1,5 3,9 5,13 6,8 14,12 25,12 10,0 18,-4 24,-12 2,-4 4,-8 5,-13l30 11zm-119 -64c3,-8 8,-15 13,-21 6,-7 13,-12 21,-15 7,-4 16,-5 26,-5 9,0 18,1 26,5 8,3 14,8 20,15 5,6 10,13 13,21l-29 12c-2,-5 -4,-9 -6,-13 -6,-8 -14,-12 -24,-12 -11,0 -19,4 -25,12 -2,4 -4,8 -5,13l-30 -12z"/> </g></svg>');
+}
+
+div.ast-logo-black {
+  background-image:url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="502px" height="129px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 491 126" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs>  <style type="text/css">   <![CDATA[    .fil1 {fill:#d4d4d4}    .fil0 {fill:#d4d4d4;fill-rule:nonzero}   ]]>  </style> </defs> <g id="Layer_x0020_1"> <path class="fil0" d="M407 13c0,3 -2,6 -4,9 -3,2 -6,3 -9,3 -3,0 -6,-1 -9,-3 -2,-3 -4,-6 -4,-9 0,-4 2,-7 4,-10 3,-2 6,-3 9,-3 3,0 6,1 9,3 2,3 4,6 4,10z"/>  <polygon class="fil0" points="404,124 384,124 384,36 404,36 "/>  <path class="fil0" d="M298 39c4,-1 9,-3 15,-4 6,-1 13,-1 20,-1 7,0 13,1 17,3 5,2 9,5 11,8 3,4 5,8 6,13 1,5 2,10 2,16l0 50 -20 0 0 -47c0,-4 0,-8 0,-12 -1,-3 -2,-6 -3,-8 -2,-2 -3,-3 -6,-4 -2,-1 -5,-2 -8,-2 -3,0 -5,1 -8,1 -3,0 -5,1 -6,1l0 71 -20 0 0 -85z"/>  <path class="fil0" d="M152 13l20 -4 0 27 30 0 0 17 -30 0 0 36c0,7 1,12 3,15 2,3 6,4 11,4 3,0 7,-1 9,-2 3,-1 5,-1 7,-2l3 17c-2,1 -5,2 -9,3 -3,1 -8,2 -12,2 -7,0 -12,-1 -16,-3 -4,-1 -7,-4 -9,-7 -3,-3 -4,-7 -5,-12 -1,-4 -2,-9 -2,-15l0 -76z"/>  <path class="fil0" d="M107 109c6,0 9,-1 12,-2 2,-1 3,-3 3,-6 0,-3 -1,-6 -3,-8 -3,-2 -7,-4 -13,-6 -4,-1 -7,-3 -10,-4 -3,-2 -5,-3 -7,-6 -3,-2 -4,-4 -6,-7 -1,-3 -1,-6 -1,-10 0,-8 2,-15 8,-19 6,-5 14,-7 23,-7 5,0 10,0 15,1 4,1 8,2 10,3l-4 16c-2,-1 -5,-2 -8,-2 -3,-1 -7,-2 -12,-2 -4,0 -7,1 -9,2 -3,2 -4,4 -4,7 0,3 1,5 3,7 1,1 3,2 5,3 2,1 4,2 7,3 5,1 9,3 12,5 3,2 6,4 8,6 2,2 3,4 4,7 1,3 2,6 2,10 0,9 -3,15 -9,19 -6,5 -15,7 -26,7 -7,0 -13,-1 -18,-2 -4,-1 -7,-2 -9,-3l3 -17c3,1 7,2 11,3 4,2 8,2 13,2z"/>  <path class="fil0" d="M36 109c6,0 10,0 13,-1l0 -22c-1,0 -2,-1 -4,-1 -2,0 -5,-1 -7,-1 -2,0 -4,1 -7,1 -2,0 -4,1 -6,2 -1,1 -3,2 -4,4 -1,1 -1,3 -1,6 0,4 1,8 4,10 3,2 7,2 12,2zm-2 -75c7,0 12,0 16,2 5,2 8,4 11,7 3,3 4,7 6,11 1,5 1,9 1,14l0 54c-3,0 -7,1 -13,2 -6,1 -13,2 -21,2 -5,0 -10,-1 -14,-2 -4,-1 -8,-3 -11,-5 -3,-2 -5,-5 -6,-9 -2,-3 -3,-8 -3,-13 0,-5 1,-9 3,-13 2,-3 4,-6 7,-8 4,-2 7,-4 12,-5 4,-1 8,-1 13,-1 2,0 4,0 7,0 2,0 5,1 7,2l0 -4c0,-2 0,-4 0,-6 -1,-3 -2,-4 -3,-6 -2,-2 -3,-3 -6,-4 -2,-1 -5,-1 -8,-1 -4,0 -9,0 -12,1 -4,0 -7,1 -10,2l-2 -16c3,-1 6,-2 11,-3 5,-1 10,-1 15,-1z"/>  <path class="fil0" d="M262 80c0,4 -1,7 -4,9 -2,2 -5,3 -9,3 -3,0 -6,-1 -8,-3 -3,-2 -4,-5 -4,-9 0,-4 1,-7 4,-9 2,-3 5,-4 8,-4 4,0 7,1 9,4 3,2 4,5 4,9z"/>  <path class="fil1" d="M286 100c-1,5 -4,10 -7,13 -4,4 -8,7 -13,10 -5,2 -11,3 -17,3 -6,0 -11,-1 -16,-3 -5,-3 -9,-6 -13,-10 -3,-3 -6,-8 -8,-13l19 -7c0,3 2,5 3,8 4,5 9,7 15,7 7,0 12,-2 15,-7 2,-3 3,-5 4,-8l18 7zm-74 -40c2,-5 5,-10 8,-14 4,-4 8,-7 13,-9 5,-2 10,-3 16,-3 6,0 12,1 17,3 5,2 9,5 13,9 3,4 5,9 7,14l-18 7c-1,-3 -2,-6 -4,-8 -3,-5 -8,-8 -15,-8 -6,0 -11,3 -15,8 -1,2 -3,5 -3,8l-19 -7z"/>  <path class="fil0" d="M467 80c0,4 -2,7 -4,9 -3,2 -6,3 -9,3 -3,0 -6,-1 -9,-3 -2,-2 -4,-5 -4,-9 0,-4 2,-7 4,-9 3,-3 6,-4 9,-4 3,0 6,1 9,4 2,2 4,5 4,9z"/>  <path class="fil1" d="M491 100c-2,5 -5,10 -8,13 -4,4 -8,7 -13,10 -5,2 -11,3 -17,3 -6,0 -11,-1 -16,-3 -5,-3 -9,-6 -13,-10 -3,-3 -6,-8 -8,-13l19 -7c1,3 2,5 3,8 4,5 9,7 15,7 7,0 12,-2 16,-7 1,-3 2,-5 3,-8l19 7zm-75 -40c2,-5 5,-10 8,-14 4,-4 8,-7 13,-9 5,-2 11,-3 16,-3 6,0 12,1 17,3 5,2 9,5 13,9 3,4 6,9 8,14l-19 7c-1,-3 -2,-6 -3,-8 -4,-5 -9,-8 -16,-8 -6,0 -11,3 -15,8 -1,2 -2,5 -3,8l-19 -7z"/> </g></svg>');
+}
+
+@function ast-ui-base-theme() {
+  @return (
+    c0: #ffffff, // color 0
+    c1: #ffffff, // color 1
+    c2: #f1f1f1, // color 2
+    c3: #e4e4e4, // color 3
+    ac1: #ffe8e8, // color accent 1
+    ac2: #f9c2c2, // color accent 2
+    b1: #bfbfbf, // border 1
+    b2: #aaaaaa, // border 2
+    t0: #a5a5a5, // text 1
+    t1: #222222, // text 2
+    font-family: ( Calibri, Arial, 'Helvetica Neue', sans-serif),
+    font-size: 14px,
+  );
+} 
+
+@mixin ast-core-theme($theme) { 
+  .ast-window-content {
+    background: map-get($theme, c2);
+    width: 100%;
+    height: 100%;
+    font-family: map-get($theme, font-family);
+    font-size: map-get($theme, font-size);
+  }
+
+  .ast-popup {
+    background: map-get($theme, c0);
+    opacity: 0.95;
+    border: 1px map-get($theme, b2) solid;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #DDD;
+    padding: 5px;
+    font-family: map-get($theme, font-family);
+    font-size: map-get($theme, font-size);
+  }
+  
+  .ast-dropdown {
+    background: map-get($theme, c0);
+    border: 1px map-get($theme, b2) solid;
+    box-shadow: 1px 1px 2px #DDD;
+    font-family: map-get($theme, font-family);
+    font-size: map-get($theme, font-size);
+  }
+  
+  .ast-bottom-window-toolbar .ast-toolbar {
+    border-top: 1px solid map-get($theme, b2);
+  }
+
+  /*.ast-grid-window-toolbar .ast-toolbar {
+    border: none;
+  }*/
+  
+  .cdk-overlay-container{
+    pointer-events:none;
+    top:0;left:0;
+    height:100%;
+    width:100%;
+    position:fixed;
+    z-index:1000;
+  }
+  .cdk-overlay-pane{
+    position:absolute;
+    pointer-events:auto;
+    box-sizing:border-box;
+    z-index:1000
+  }
+  .cdk-overlay-backdrop{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    pointer-events: auto;
+    background: none;
+  }
+}
+
+
+
+@mixin ast-ui-theme($theme) {
+  @include ast-core-theme($theme);
+  @include ast-button-theme($theme);
+  @include ast-button-group-theme($theme);
+  @include ast-dropdown-button-theme($theme);
+  @include ast-from-field-group-theme($theme);
+  @include ast-grid-theme($theme);
+  @include ast-items-group-theme($theme);
+  @include ast-items-list-theme($theme);
+  @include ast-label-theme($theme);
+  @include ast-menu-theme($theme);
+  @include ast-menu-item-theme($theme);
+  @include ast-popup-menu-theme($theme);
+  @include ast-popup-menu-item-theme($theme);
+  @include ast-tab-theme($theme);
+  @include ast-tabs-theme($theme);
+  @include ast-toolbar-theme($theme);
+  @include ast-question-dialog-theme($theme);
+  @include ast-choise-dialog-theme($theme);
+  @include ast-checkbox-widget-theme($theme);
+  @include ast-choise-widget-theme($theme);
+  @include ast-date-input-widget-theme($theme);
+  @include ast-date-range-input-widget-theme($theme);
+  @include ast-number-input-widget-theme($theme);
+  @include ast-number-range-input-widget-theme($theme);
+  @include ast-text-input-widget-theme($theme);
+  @include ast-input-frame-theme($theme);
+  @include ast-input-frame-button-theme($theme);
+}

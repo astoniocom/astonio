@@ -1,0 +1,5 @@
+<ag-grid-angular *ngIf="show" #agGrid style="width: 100%; height: 100%;" class="ag-fresh" [gridOptions]="agGridOptions" [rowData]="rows" 
+(cellEditingStarted)="onCellEditingStarted($event)" (virtualRowRemoved)="onVirtualRowRemoved($event)" 
+(cellValueChanged)="onCellValueChanged($event)" (cellFocused)="onCellFocused($event)"
+(cellDoubleClicked)="onCellDoubleClicked($event)" (cellClicked)="onCellClicked($event)"
+(paginationPageLoaded)="onPaginationPageLoaded()" (columnResized)="onColumnResized($event)"></ag-grid-angular>

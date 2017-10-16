@@ -1,0 +1,25 @@
+<div [attr.class]="'ast-text-input-widget '+class">
+  <ast-input-frame *ngIf="disabled" [errors]="errors" [disabled]="disabled">
+    <div class="ast-input-frame-content">
+      <div *ngIf="isValueSet()">{{ value }}&nbsp;</div>
+    </div>
+  </ast-input-frame>
+
+  <div *ngIf="!disabled" cdk-overlay-origin #origin="cdkOverlayOrigin">
+    <ast-input-frame [errors]="errors">
+      <div class="ast-input-frame-content">
+        <input #inputElement *ngIf="!disabled" class="ast-input-frame-input" type="text" [(ngModel)]="value" (keydown)="onKeyDown($event)" [attr.id]="input_id" [attr.maxlength]="maxLength" />
+      </div>
+      <div class="ast-input-frame-buttons">
+        <ast-input-frame-button (mousedown)="popupDispatcher.clickedInside()" (click)="showTextarea(!popupDispatcher.opened)"><div class="ast-input-frame-button-ico ast-ui-maximize-ico"></div></ast-input-frame-button>
+      </div>
+    </ast-input-frame>
+
+
+    <ng-template cdk-connected-overlay [origin]="origin" [open]="popupDispatcher.opened" [positions]="_positions">
+      <div class="ast-popup ast-text-input-widget-popup" (mousedown)="popupDispatcher.clickedInside()">
+        <textarea #inputArea [(ngModel)]="value" (keydown)="onTextareaKeyDown($event)" rows="7" cols="35" [autofocus]  [attr.maxlength]="maxLength"></textarea>
+      </div>
+    </ng-template>
+  </div>
+</div>

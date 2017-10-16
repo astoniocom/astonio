@@ -1,0 +1,8 @@
+<div fxLayoutWrap="row" class="form-field-group" #container>
+  <div [fxFlex]="labelSize">
+    <ng-content select=".form-field-group-label"></ng-content>
+  </div>
+  <div [fxFlex]="controlSize">
+    <ng-content select=".form-field-group-control"></ng-content>
+  </div>
+</div>

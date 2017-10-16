@@ -1,0 +1,27 @@
+@mixin ast-dropdown-button-theme($theme) { 
+  .ast-dropdown-button {
+    display: inline-flex;
+  }
+
+  .ast-dropdown-button.no-text > ast-button .ast-button {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .ast-dropdown-button.no-text > ast-button .ast-button-text {
+    margin-right: 1px;
+    margin-left: 1px;
+  }
+
+  .dropdown-button-container {
+    position:absolute;
+  }
+
+  .ast-ui-dropdown-ico {
+    width: 0.7em;
+    height: 0.7em;
+    background-size: 0.7em;
+    margin: 0 2px;
+  }
+
+}

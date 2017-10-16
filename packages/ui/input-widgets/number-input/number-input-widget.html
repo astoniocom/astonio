@@ -1,0 +1,25 @@
+<div [attr.class]="'ast-numer-input-widget ' + class">
+  <ast-input-frame *ngIf="disabled" [errors]="errors" [disabled]="disabled">
+    <div class="ast-input-frame-content">
+      <div *ngIf="isValueSet()" style="text-align: right;">{{ getViewValue() }}&nbsp;</div>
+    </div>
+  </ast-input-frame>
+
+  <div *ngIf="!disabled" cdk-overlay-origin #origin="cdkOverlayOrigin" >
+    <ast-input-frame [errors]="errors">
+      <div class="ast-input-frame-content">
+        <input #inputElement type="text" class="ast-input-frame-input" [(ngModel)]="inputValue" (keydown)="onKeyDown($event)" [attr.id]="input_id" [attr.maxlength]="maxLength" />
+      </div>
+      <div class="ast-input-frame-buttons">
+        <ast-input-frame-button (mousedown)="popupDispatcher.clickedInside()" (click)="showCalculator(!popupDispatcher.opened)"><div class="ast-input-frame-button-ico ast-ui-calculator-ico"></div></ast-input-frame-button>
+      </div>
+    </ast-input-frame>
+
+
+    <ng-template cdk-connected-overlay [origin]="origin" [open]="popupDispatcher.opened" [positions]="_positions">
+      <div class="ast-popup ast-number-input-widget-popup" (mousedown)="popupDispatcher.clickedInside()">
+        <textarea #inputArea [(ngModel)]="expression" (keydown)="onCalculatorKeyDown($event)" rows="3" cols="35" [autofocus]  [attr.maxlength]="maxLength"></textarea>
+      </div>
+    </ng-template>
+  </div>
+</div>

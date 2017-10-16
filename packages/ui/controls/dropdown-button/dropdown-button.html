@@ -1,0 +1,10 @@
+<div class="ast-dropdown-button" cdk-overlay-origin  #origin="cdkOverlayOrigin" [ngClass]="{'no-text': noText}">
+  <ast-button [active]="opened" [text]="_textEx" (click)="buttonClicked()" (mousedown)="buttonMousedown()" [disabled]="disabled">
+    <div class="ast-button-rightImage ast-ui-dropdown-ico">
+    </div>
+  </ast-button>
+</div>
+
+<ng-template cdk-connected-overlay [origin]="origin" [open]="opened" [positions]="_positions">
+  <ng-content></ng-content>
+</ng-template>

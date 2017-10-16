@@ -1,0 +1,15 @@
+{
+  "name": "@astonio/mysql-backend",
+  "version": "1.0.0-alpha.1",
+  "description": "Mediator between module @astonio/core and a MySQL database.",
+  "readme": "README.md",
+  "dependencies": {
+    "mysql": "^2.14.1"
+  },
+  "peerDependencies": {
+    "@astonio/core": "^1.0.0-alpha.1",
+    "rxjs": "^5.4.3"
+  },
+  "author": "Viktar Katlianik <info@astonio.com>",
+  "license": "MIT"
+}

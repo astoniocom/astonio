@@ -1,0 +1,45 @@
+@mixin ast-popup-menu-item-theme($theme) { 
+  .ast-popup-menu-item {
+    clear: both;
+    padding: 2px 3px;
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+
+  .ast-popup-menu-item:hover, .ast-popup-menu-item-active {
+    background-color: map-get($theme, c3);
+    border-top: 1px solid map-get($theme, c3);
+    border-bottom: 1px solid map-get($theme, c3);
+    padding: 1px 3px;
+  }
+
+  .ast-popup-menu-item-disabled .ast-popup-menu-item-text {
+    opacity: 0.3;
+  }
+
+  .ast-popup-menu-item-text {
+    white-space: nowrap;
+    margin: 3px 4px;
+    padding: 0;
+    cursor: default;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  .ast-popup-menu-item-arrow {
+    margin: 2px 4px;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+}

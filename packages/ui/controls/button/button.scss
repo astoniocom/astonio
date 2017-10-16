@@ -1,0 +1,58 @@
+﻿@mixin ast-button-theme($theme) { 
+
+  .ast-button {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      overflow: hidden;
+      border: 1px solid map-get($theme, b1);
+      border-radius: 3px;
+      font-family: map-get($theme, font-family);
+      font-size:  map-get($theme, font-size);
+      padding: 0px 0.3em;
+      height: 2em;
+  }
+
+  .ast-button:hover:not(.ast-button-disabled):not(.ast-button-active):not(active) {
+    background-color: map-get($theme, c1);
+  }
+
+  .ast-button:active:not(.ast-button-disabled), .ast-button-active {
+    background-color: map-get($theme, c3);
+    background: linear-gradient(map-get($theme, c3),map-get($theme, c3));
+    box-shadow: 0 0 5px rgba(127,127,127,0.15) inset;
+  }
+
+  .ast-button-text {
+    margin: 0 0.3em;
+    cursor: default;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  .ast-button-disabled .ast-button-text, .ast-button-disabled .ast-button-image, .ast-button-disabled .ast-button-rightImage {
+    opacity: 0.3;
+  }
+
+  .ast-button-default {
+    font-weight: bold;
+  }
+
+  .ast-button-image, .ast-button-rightImage {
+    width: 1.2em;
+    height: 1.2em;
+    /*background-color: #aaa;*/
+    background-size: 1.2em;
+    background-repeat: no-repeat;
+  }
+
+  .ast-button-image:after, .ast-button-rightImage:after {
+    content: "\00A0";
+  }
+}

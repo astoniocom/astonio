@@ -1,0 +1,14 @@
+<div *ngFor="let item of items; let i = index" class="items-list-item"><!--(mouseover)="_currentIndex=i"  id="item-{{i}}" (click)="pickItem(item)" -->
+  <div class="items-list-itemline" [ngClass]="{'highlighted': currentFocus==i, 'selected': isItemSelected(item)}">
+    <div class="items-list-caption" (click)="onItemClick($event, item)" (dblclick)="toogleItem(i)"> <!-- id="{{ getItemIdName(item) }}" (mouseover)="setCurrentItem(item)"-->
+      <ng-template [ngTemplateOutlet]="itemTemplate" [ngOutletContext]="{item: item}"></ng-template>
+    </div> 
+    <div (mousedown)="toogleItem(i)" *ngIf="item[childrenAttr] && item[childrenAttr].length" class="items-list-toogle-button" [ngClass]="{'expanded': isItemExpanded(i)}">
+      <i *ngIf="!isItemExpanded(i)" class="sw-stopitem-moreless sw-stopitem-more fa fa-plus-square"></i>
+      <i *ngIf="isItemExpanded(i)" class="sw-stopitem-moreless sw-stopitem-less fa fa-minus-square"></i>
+    </div>
+  </div>
+  <div class="items-list-children level-{{_level+1}}" *ngIf="isItemExpanded(i)">
+    <ast-items-group #group [selectType]="selectType" [selectMode]="selectMode" [_rootItemsGroupComponent]="_rootItemsGroupComponent" [allExpanded]="allExpanded" (focusLeaved)="onFocusLeaved($event, i)" [_parentItem]="item" [items]="item[childrenAttr]" [itemTemplate]="itemTemplate" [_level]="level+1" (focusChanged)="onChildGroupFocusChanged($event)" (_selectionChanged)="onChildGroupSelectionChanged($event, item)"></ast-items-group>
+  </div>
+</div> 

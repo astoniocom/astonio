@@ -1,0 +1,23 @@
+<div fxLayout="column" class="ast-window-content">
+  <div fxFlex="grow" style="display:flex">
+    <div style="display: table;width: 100%;height: 100%;margin:5px;">
+      <div style="display:table-cell; width: 35%;padding: 30px;">
+        <div class="ast-logo" style="width: 100%;height: 100%;background-size: 100%;background-repeat: no-repeat;background-position-x: center;background-position-y: 40%;"></div>
+      </div>
+      <div style="display:table-cell; width: 65%;vertical-align: middle;">
+        {{appName}}
+        <div class="ast-copyright" style="margin-top: 10px; font-size: 0.8em;">
+          Works on Astonio Framework<br>
+          &copy; 2017 Viktar Katlianik<br>
+          <a href="#" (click)="openSite($event)">js.astonio.com</a><br>
+          Code licensed under MIT license.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="nogrow">
+    <ast-toolbar align="right" class="ast-bottom-window-toolbar">
+      <ast-button text="Close" [default]="true" (click)="doClose()"></ast-button>
+    </ast-toolbar>
+  </div>
+</div>

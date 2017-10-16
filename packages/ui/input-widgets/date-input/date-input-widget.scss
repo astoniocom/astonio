@@ -1,0 +1,15 @@
+@mixin ast-date-input-widget-theme($theme) { 
+  .ast-date-input-widget, input[type="date"].ast-date-input-input, input[type="datetime-local"].ast-date-input-input {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+  input[type="date"].ast-date-input-input::-webkit-calendar-picker-indicator, input[type="datetime-local"].ast-date-input-input::-webkit-calendar-picker-indicator{
+      display:inline-block;
+      margin-top:2%;
+      float:right;
+  }
+  input[type="date"].ast-date-input-input::-webkit-inner-spin-button, input[type="datetime-local"].ast-date-input-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+}

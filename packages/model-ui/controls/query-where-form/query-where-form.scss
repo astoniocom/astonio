@@ -1,0 +1,10 @@
+@mixin ast-query-where-form-theme($theme) { 
+  .ast-query-where-form-remove-button .ast-button, .ast-query-where-form-add-button .ast-button {
+    height: calc(1.2em + 1px);
+  }
+  
+  .ast-query-where-form select, .ast-query-where-form input {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+}

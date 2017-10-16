@@ -1,0 +1,24 @@
+@mixin ast-menu-item-theme($theme) { 
+  .ast-menu-item {
+    float: left;
+    cursor: default;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+
+  .ast-menu-item:hover, .ast-menu-item-active {
+     background-color: map-get($theme, c3);
+  }
+
+  .ast-menu-item-text {
+    margin: 3px 0.7em;
+  }
+}

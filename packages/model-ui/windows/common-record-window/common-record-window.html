@@ -1,0 +1,57 @@
+<div fxLayout="column" class="ast-common-record-window ast-window-content" [ngClass]="{'ast-common-record-window-loading': isLoading}">
+  <div fxFlex="grow" fxLayout="column">
+    <div fxFlex="none" class="ast-common-record-window-errors" *ngIf="record.__director__.messages && record.__director__.messages.length">
+      <div *ngFor="let recordMessage of record.__director__.messages" >
+        {{ recordMessage.message }} 
+      </div>
+    </div>
+    <ast-tabs  fxFlex="none" *ngIf="tabs.length > 1"> 
+      <ast-tab *ngFor="let tab of tabs" (click)="setTab(tab)" [title]="tab.verboseName" [active]="curTab == tab"></ast-tab>
+    </ast-tabs>
+    <div fxFlex="grow" *ngIf="curTab.name == '__main__'" style="overflow-y:auto;overflow-x: hidden;">
+      <ast-model-form #form [model]="record.__director__.model" [record]="record" [edit]="edit" [fields]="fields" [readonly]="readonly"></ast-model-form>
+    </div>
+    <div fxFlex="grow" *ngIf="curTab.name !== '__main__' && (curTab.nRecords !== undefined || record.__director__.isNew)">
+      <div fxLayout="column"  style="height:100%" *ngIf="record.__director__.isNew || curTab.nRecords < config.commonRecordWindowRelLimit || curTab.forceRelated; else querysetGrid"  >
+        <ast-related-records-grid-toolbar fxFlex="none"  [grid]="grid" *ngIf="edit" class="ast-grid-window-toolbar"></ast-related-records-grid-toolbar>
+        <ast-related-records-grid fxFlex="grow" [relatedRecords]="record[curTab.name]" #grid [edit]="edit"></ast-related-records-grid>
+      </div>
+      <ng-template #querysetGrid>
+        <div fxLayout="column" style="height:100%">
+          <ast-queryset-grid-toolbar fxFlex="none" [grid]="grid" class="ast-grid-window-toolbar">
+            <ast-button text="All records" (click)="forceRelated(curTab)"></ast-button>
+          </ast-queryset-grid-toolbar>
+          <ast-queryset-grid fxFlex="grow" #grid [queryset]="curTab.queryset" [fields]="['__repr__', {exclude:curTab.linkedFields} ]" ></ast-queryset-grid><!-- (cellDoubleClicked)="onCellDoubleClicked($event)"-->
+        </div>
+      </ng-template>
+    </div>
+    <!-- {{record.__director__.extractStateData()|json}} -->
+  </div>
+  <div fxFlex="none">
+    <ast-toolbar class="ast-bottom-window-toolbar">
+      <div fxLayout="row" style="margin:0">
+        <div class="ast-toolbar-row" fxFlex="auto">
+        </div>
+        <div  class="ast-toolbar-row" fxFlex="nogrow">
+          <ast-dropdown-button text="Actions">
+            <ast-popup-menu>
+              <ast-popup-menu-item text="Reload" (click)="reload()" [disabled]="record.__director__.isNew"></ast-popup-menu-item>
+              <ast-popup-menu-item *ngIf="edit" text="Delete" (click)="delete()" [disabled]="record.__director__.isNew"></ast-popup-menu-item>
+            </ast-popup-menu>
+          </ast-dropdown-button>
+          <ast-button-group *ngIf="edit">
+            <ast-button text="OK" (click)="ok()" [default]="true"></ast-button>
+            <ast-dropdown-button>
+              <ast-popup-menu>
+                <ast-popup-menu-item text="Save" (click)="save()"></ast-popup-menu-item>
+                <ast-popup-menu-item text="Save and make a copy" (click)="saveAndCopy()"></ast-popup-menu-item>
+                <ast-popup-menu-item text="Save and make a copy with related records" (click)="saveAndCopy(true)"></ast-popup-menu-item>
+              </ast-popup-menu>
+            </ast-dropdown-button>
+          </ast-button-group>
+          <ast-button text="Close" (click)="closeWindow()"></ast-button>
+        </div>
+      </div>
+    </ast-toolbar>
+  </div>
+</div>

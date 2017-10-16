@@ -1,0 +1,18 @@
+<div fxLayout="column" class="ast-window-content" >
+  <div fxFlex="grow" *ngIf="workWhere" class="ast-filter-window-form"> 
+     <ast-query-where-from [query]="query" [where]="workWhere" #whereForm></ast-query-where-from>
+  </div>
+  <ast-toolbar fxFlex="none" class="ast-bottom-window-toolbar">
+    <div fxLayout="row" style="margin:0">
+      <div fxFlex="auto" class="ast-toolbar-row">
+      </div>
+      <div fxFlex="nogrow" class="ast-toolbar-row">
+        
+        <ast-button text="Stick" *ngIf="showStickButton" (click)="onStickButtonClick()"></ast-button>
+        <ast-button text="OK" [default]="true" (click)="ok()"></ast-button>
+        <!-- <ast-button text="Отменить" (click)="cancelFilter()"></ast-button> -->
+        <ast-button text="Close" (click)="closeWindow()"></ast-button>
+      </div>
+    </div>
+  </ast-toolbar>
+</div>

@@ -1,0 +1,22 @@
+<div [attr.class]="'ast-date-range-input-widget ' + class" >
+  <ast-input-frame *ngIf="disabled" [errors]="errors" [disabled]="disabled" [noBorder]="true">
+    <div class="ast-input-frame-content">
+      <div *ngIf="isValueSet()">{{ getRepr() }}&nbsp;</div>
+    </div>
+  </ast-input-frame>
+
+  <div *ngIf="!disabled">
+    <ast-input-frame [errors]="errors" [noBorder]="true">
+      <div class="ast-input-frame-content">
+        <div fxLayout="row">
+          <div fxFlex="nogrow">from&nbsp;</div>
+          <ast-date-input fxFlex="auto" [(ngModel)]="fromValue" #fromInput [showTime]="showTime"></ast-date-input>
+          <div fxFlex="nogrow">&nbsp;to&nbsp;</div>
+          <ast-date-input  fxFlex="auto" [(ngModel)]="toValue" #toInput  [showTime]="showTime"></ast-date-input>
+        </div>
+      </div>
+      <div class="ast-input-frame-buttons">
+      </div>
+    </ast-input-frame>
+  </div>
+</div>

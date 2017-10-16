@@ -1,0 +1,26 @@
+@mixin ast-button-group-theme($theme) { 
+  .ast-button-group {
+    display: inline-flex;
+  }
+  
+  .ast-button-group > ast-button + ast-button, .ast-button-group > ast-button + ast-dropdown-button, .ast-button-group > ast-dropdown-button + ast-button {
+    margin-left: -1px;
+  }
+
+  .ast-button-group > ast-button:first-child:not(:last-child) > .ast-button, 
+  .ast-button-group > ast-dropdown-button:first-child:not(:last-child) .ast-button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .ast-button-group > ast-button:not(:first-child):not(:last-child) > .ast-button,
+  .ast-button-group > ast-dropdown-button:not(:first-child):not(:last-child) .ast-button {
+    border-radius: 0;
+  }
+
+  .ast-button-group > ast-button:last-child:not(:first-child) > .ast-button,
+  .ast-button-group > ast-dropdown-button:last-child:not(:first-child) .ast-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

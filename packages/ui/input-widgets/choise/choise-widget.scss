@@ -1,0 +1,21 @@
+@mixin ast-choise-widget-theme($theme) { 
+  .ast-choise-wiget-choise {
+    background: map-get($theme, c2);
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+
+  .ast-input-frame.ast-input-frame-error .ast-choise-wiget-choise {
+    background: map-get($theme, ac2);
+  }
+
+  .ast-choise-widget-dropdown {
+    max-height:250px;
+    overflow-x: auto;
+  }
+}

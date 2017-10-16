@@ -1,0 +1,18 @@
+@mixin ast-common-record-window-theme($theme) { 
+  .common-record-window {
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+  }
+
+  .ast-common-record-window-loading {
+    opacity: 0.3;
+  }
+
+  .ast-common-record-window-errors {
+    background: map-get($theme, ac1);
+    border-bottom: solid 1px map-get($theme, ac2);
+    padding: 5px;
+  }
+
+  
+}

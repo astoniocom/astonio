@@ -1,0 +1,7 @@
+﻿<div class="ast-button" fxLayout="row" fxLayoutAlign="space-between center" [ngClass]="{'ast-button-default': default, 'ast-button-active': active, 'ast-button-disabled':disabled}">
+  <img class="ast-button-image" *ngIf="image" [attr.src]="image">
+  <ng-content select=".ast-button-image"></ng-content>
+  <div class="ast-button-text" *ngIf="text">{{ text }}</div>
+  <img class="ast-button-rightImage" *ngIf="rightImage" [attr.src]="rightImage">
+  <ng-content select=".ast-button-rightImage"></ng-content>
+</div>

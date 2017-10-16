@@ -1,0 +1,6 @@
+@mixin ast-date-range-input-widget-theme($theme) { 
+  .ast-date-range-input-widget {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+}

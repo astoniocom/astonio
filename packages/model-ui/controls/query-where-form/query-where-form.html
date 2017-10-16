@@ -1,0 +1,47 @@
+<div class="ast-query-where-form">
+  <div>
+    Mode:
+    <input type="checkbox" [(ngModel)]="where.negated" (click)="isWhereChanged = true"> Not &nbsp;&nbsp; 
+    <select [(ngModel)]="where.connector"  (change)="isWhereChanged = true">
+      <option *ngFor="let connector of connectors" [ngValue]="connector[0]">{{ connector[1] }}</option>
+    </select>
+  </div>
+  <table width="100%">
+    <tr *ngFor="let condition of where.children; let i = index">
+        <td>{{i+1}}.</td>
+        <td *ngIf="conditionInstanceOfWhere(condition); else conditionTemplate" colspan="3">
+          <a href="javascript:" (click)="editSubWhere(condition)">< Sub conditions ></a>
+        </td>
+        <ng-template #conditionTemplate>
+          <td>{{ condition.lhs.colName }}</td> 
+          <td>{{ condition.verboseName }}</td> <!-- {{ condition.rhs }} -->
+          <td width="100%"><ast-query-where-from-condition-container [lookup]="condition" [field]="condition.lhs.target"  [model]="query.model" (changed)="onChangedCondition()"></ast-query-where-from-condition-container></td>
+        </ng-template>
+        <td><ast-button (click)="removeCondition(condition)" text="Remove" class="ast-query-where-form-remove-button"></ast-button></td>
+    </tr>
+    <tr>
+      <td>
+        {{ where.children.length+1 }}.
+      </td>
+      <td>
+        <select [(ngModel)]="criteriaToAdd" (ngModelChange)="onColumnChanged()"> 
+          <option *ngFor="let col of getCriterias()" [ngValue]="col">{{ getColRepr(col) }}</option>
+        </select>
+      </td> 
+      <td>
+        <select *ngIf="getCriteriaType(criteriaToAdd) == 'field'" [(ngModel)]="lookupToAdd" (ngModelChange)="onLookupChanged()">
+          <option *ngFor="let lookup of criteriaToAdd.lookups" [ngValue]="lookup">{{ lookup.prototype.verboseName }}</option>
+        </select>
+      </td> <!-- {{ condition.rhs }} -->
+      <td width="100%">
+        <div #valueContainer *ngIf="lookupToAdd"></div>
+        <div *ngIf="lookupToAdd && notSupportedLookup">Not supported</div>
+      </td>
+      <td><ast-button (click)="onAddConditionClicked()" *ngIf="getCriteriaType(criteriaToAdd) == 'where' || (lookupToAdd && newConditionInputComponentRef)" class="ast-query-where-form-add-button" text="Add"></ast-button></td>
+    </tr>
+  </table>
+</div>
+
+
+
+

@@ -1,0 +1,33 @@
+@mixin ast-toolbar-theme($theme) { 
+  .ast-toolbar {
+    //border: 1px solid map-get($theme, b2);
+    background-color: map-get($theme, c2);
+    //background: linear-gradient(map-get($theme, c2),map-get($theme, c3));
+    line-height: normal;
+    cursor: default;
+    overflow: hidden;
+    color: black;
+    padding: 0.2em;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+
+  /*.ast-toolbar-row {
+    display: inline-flex;
+  }*/
+
+  .ast-toolbar-row > * {
+    margin: 0.2em;
+    display: inline-table;
+  }
+
+  .ast-toolbar-row-align-right {
+    text-align: right;
+  }
+}

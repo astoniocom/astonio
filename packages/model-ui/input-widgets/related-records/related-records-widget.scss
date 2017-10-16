@@ -1,0 +1,24 @@
+@mixin ast-related-records-widget-theme($theme) { 
+  .ast-related-records-widget {
+    font-family: map-get($theme, font-family);
+    font-size:  map-get($theme, font-size);
+  }
+  
+  .ast-related-records-representation {
+    background: map-get($theme, c2);
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  .ast-related-records-wiget-dropdown {
+    max-height:250px;
+    overflow: auto;
+  }
+
+  .ast-input-frame.ast-input-frame-error .ast-related-records-representation {
+    background: map-get($theme, ac2);
+  }
+}

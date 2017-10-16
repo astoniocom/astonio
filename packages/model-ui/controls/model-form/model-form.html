@@ -1,0 +1,12 @@
+<div #area>
+  <div fxLayoutWrap="row" *ngIf="layout == 'horizontal'">
+    <div [fxFlex]="fieldSize" *ngFor="let f of _containers">
+      <div #container></div>
+    </div>
+  </div>
+  <div *ngIf="layout == 'vertical'">
+    <div *ngFor="let f of _containers">
+      <div #container></div>
+    </div>
+  </div>
+</div>

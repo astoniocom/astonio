@@ -1,0 +1,7 @@
+<div fxLayout="column" class="ast-window-content">
+  <ast-queryset-grid-toolbar [grid]="grid" fxFlex="none" class="ast-grid-window-toolbar">
+    <ast-button text="Choose" *ngIf="choice" (click)="makeChoice()"></ast-button>
+  </ast-queryset-grid-toolbar>
+  <ast-queryset-grid #grid  fxFlex="grow" [queryset]="queryset" (cellDoubleClicked)="onCellDoubleClicked($event)" 
+    [rowSelection]="!choice||choice=='multiple'" [fields]="fields" [readonly]="readonly"></ast-queryset-grid>
+</div>

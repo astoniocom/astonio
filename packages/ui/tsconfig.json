@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false
+  } 
+}

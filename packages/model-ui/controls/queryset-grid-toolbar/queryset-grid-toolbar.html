@@ -1,0 +1,48 @@
+<ast-toolbar>
+  <ast-button text="Create" (click)="actions.newRecord()" [disabled]="!actions?.newRecordAvailable()">
+    <div class="ast-button-image ast-model-ui-plus-ico"></div>
+  </ast-button>
+  <ast-button-group>
+    <ast-button text="Copy" (click)="actions.copyRecords()" [disabled]="!actions?.copyRecordsAvailable()">
+      <div class="ast-button-image ast-model-ui-copy-ico"></div>
+    </ast-button>
+    <ast-dropdown-button [disabled]="!actions?.copyRecordsAvailable()">
+      <ast-popup-menu>
+        <ast-popup-menu-item text="Copy with related" (click)="actions.copyRecords(true)" [disabled]="!actions?.copyRecordsAvailable()"></ast-popup-menu-item>
+      </ast-popup-menu>
+    </ast-dropdown-button>
+  </ast-button-group>
+  
+  <ast-button text="View" (click)="actions.openRecords()" [disabled]="!actions?.openRecordsAvailable()">
+    <div class="ast-button-image ast-model-ui-view-ico"></div>
+  </ast-button>
+  <ast-button text="Edit" (click)="actions.editRecords()" [disabled]="!actions?.editRecordsAvailable()">
+    <div class="ast-button-image ast-model-ui-edit-ico"></div>
+  </ast-button>
+  <ast-button text="Delete" (click)="actions.deleteRecords()" [disabled]="!actions?.deleteRecordsAvailable()">
+    <div class="ast-button-image ast-model-ui-delete-ico"></div>
+  </ast-button>
+  <ast-button-group>
+    <ast-button text="Filter" [default]="hasFilter()" [active]="dropdownFilterOn" (click)="onFilterClicked()">
+      <div class="ast-button-image ast-model-ui-filter-ico"></div>
+    </ast-button>
+    <ast-dropdown-button [disabled]="!quickFilterAvailable() && !cancelFilterAvailable()">
+      <ast-popup-menu>
+        <ast-popup-menu-item text="Quick filter" (click)="quickFilter()" [disabled]="!quickFilterAvailable()"></ast-popup-menu-item>
+        <ast-popup-menu-item text="Cancel" (click)="cancelFilter(true)" [disabled]="!cancelFilterAvailable()"></ast-popup-menu-item>
+      </ast-popup-menu>
+    </ast-dropdown-button>
+  </ast-button-group>
+  <ast-button text="Refresh" (click)="actions.refresh()">
+    <div class="ast-button-image ast-model-ui-refresh-ico"></div>
+  </ast-button>
+  <ng-content></ng-content>
+</ast-toolbar>
+<div *ngIf="dropdownFilterOn" style="padding:5px;">
+  <ast-query-where-from [query]="grid.queryset.query" [where]="grid.queryset.query.where" #whereForm></ast-query-where-from>
+  <ast-toolbar  align="right">
+    <ast-button text="Apply" (click)="applyNewWhere()" [default]="true"></ast-button>
+    <ast-button text="Unstick" (click)="onUnstickClicked()"></ast-button>
+    <ast-button text="Hide" (click)="dropdownFilterOn=false"></ast-button>
+  </ast-toolbar>
+</div>

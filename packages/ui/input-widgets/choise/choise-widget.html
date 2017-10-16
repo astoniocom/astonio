@@ -1,0 +1,27 @@
+<div [attr.class]="'ast-choise-widget ' + class">
+  <ast-input-frame *ngIf="disabled" [errors]="errors" [disabled]="disabled">
+    <div class="ast-input-frame-content">
+      <div *ngIf="isValueSet()">{{ repr }}&nbsp;</div>
+    </div>
+  </ast-input-frame>
+  <ast-input-frame *ngIf="!disabled" [errors]="errors">
+    <div class="ast-input-frame-content"  (dblclick)="showOptions(!popupDispatcher.opened)">
+      <div *ngIf="isValueSet()" class="ast-choise-wiget-choise">{{ repr }}&nbsp;</div>
+      <input *ngIf="!isValueSet()" class="ast-input-frame-input" [(ngModel)]="seekValue" type="text" (input)="onInput()" [attr.id]="input_id"  #inputElement />
+    </div>
+    <div class="ast-input-frame-buttons">
+      <ast-input-frame-button *ngIf="isValueSet()" (mousedown)="popupDispatcher.clickedInside()" (click)="removeValue()"><div class="ast-input-frame-button-ico ast-ui-cross-ico"></div></ast-input-frame-button>
+      <ast-input-frame-button (mousedown)="popupDispatcher.clickedInside()" (click)="showOptions(!popupDispatcher.opened)"><div class="ast-input-frame-button-ico ast-ui-expand-ico"></div></ast-input-frame-button>
+    </div>
+  </ast-input-frame>
+</div>
+
+<ng-template #dropdownTemplate>
+  <div class="ast-choise-widget-dropdown ast-dropdown" (mousedown)="popupDispatcher.clickedInside()" #panel>
+    <ast-items-list [items]="filteredChoices" [ifProcessKeys]="popupDispatcher.opened" (focusChanged)="onFocusChanged($event)" (picked)="onItemPicked($event)" #itemsList>
+      <ng-template let-item="item">
+        <div [innerHTML]="item[1]"></div>
+      </ng-template>
+    </ast-items-list>
+  </div>
+</ng-template>
